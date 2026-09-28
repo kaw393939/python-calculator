@@ -1,7 +1,7 @@
 # Specification: Engineering with AI, from CLI to web
 
-Status: approved for planning by the user's request; instructional materials not yet authored.
-Version: 1.0. Audience: early-career, AI-forward software engineering students.
+Status: teaching materials authored; see validation-report.md for verification and limits.
+Version: 1.1. Audience: early-career, AI-forward software engineering students.
 
 ## Purpose
 
@@ -11,7 +11,7 @@ coding assistant, checking its work, and improving software through real use.
 The goal is defensible engineering decisions, not a large volume of generated code.
 
 This document specifies the teaching deliverables. It does not replace the
-[application specification](../specification.md) or claim that the lessons already exist.
+[application specification](../specification.md) and is supported by the authored lessons and validation report.
 The implementation backlog is tracked in [delivery.md](delivery.md).
 
 ## Audience, prerequisites, and teaching assumptions
@@ -55,9 +55,9 @@ is preserved and is not a student exercise target. Use temporary history files f
 
 ## Required deliverables
 
-Paths below are planned outputs, not existing resources or completed promises.
+Paths below identify the authored outputs. Verification is recorded in validation-report.md.
 
-| ID | Planned path under docs/learning/ | Required content |
+| ID | Path under docs/learning/ | Required content |
 | --- | --- | --- |
 | D-01 | glossary.md | Plain-language terms, project examples, misconceptions and knowledge checks |
 | D-02 | case-study.md | Annotated, evidence-backed development story and critical analysis |

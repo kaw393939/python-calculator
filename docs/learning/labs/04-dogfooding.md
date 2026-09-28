@@ -36,7 +36,11 @@ Remaining limitations and release decision:
 AI assistance used / claims independently checked:
 ```
 
-## Cycle A — Errors that help people recover
+## Tasks
+
+Complete both cycles below in separate copies and record each in the journal.
+
+### Cycle A — Errors that help people recover
 
 In `4ba5178`, use the real CLI:
 
@@ -56,7 +60,7 @@ Implement readable diagnostics; run the tests and the same five-command sequence
 Record the change to the error-message contract in your learner specification. Compare
 with `6ae07a1` only after attempting your solution.
 
-## Cycle B — Reusing results without retyping
+### Cycle B — Reusing results without retyping
 
 In a clean `6ae07a1` copy, run:
 
@@ -73,6 +77,9 @@ then saves add 2 3 and uses it in multiply ans 2. Verify an intervening failed d
 does not replace the last result. After deleting the latest record, ans should refer to
 the latest **retained** record; after clear, it should fail again. Restart and verify
 loaded history supports ans. Store numeric operands in CSV, not the literal token.
+
+If adding clear guidance too, replace the obsolete parser rejection of `history clear`
+with a check that executing it refuses to clear without confirmation.
 
 Implement the change in the command adapter; do not make every arithmetic strategy
 understand the word ans. Re-run targeted tests, the full suite and the repeated workflow.

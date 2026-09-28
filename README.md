@@ -73,10 +73,14 @@ completed issue scope is closed by a `Closes #N` commit on the default branch.
 See the backlog for the definition of done. This is a finite floating-point,
 single-user calculator, not a symbolic algebra or exact financial arithmetic system.
 
-## AI-forward engineering lesson plan
+## Learn AI-forward software engineering
 
-The [teaching-module specification](docs/learning/specification.md) defines a six-session
-lesson sequence using this project's CLI, tests, dogfooding, and web interface.
-The [atomic delivery backlog](docs/learning/delivery.md) tracks the planned glossary,
-labs, case study, instructor guide, assessment, and final walkthrough. These teaching
-materials are planned work; the specification and issue plan are ready now.
+Start with the [student guide](docs/learning/README.md): six labs covering requirements,
+CLI architecture, testing, two dogfooding cycles, a FastAPI/JavaScript adapter, and an
+engineering defense. Includes a [glossary](docs/learning/glossary.md),
+[case study](docs/learning/case-study.md), [rubric](docs/learning/assessment.md), and
+[instructor guide](docs/learning/instructor-guide.md).
+
+The [specification](docs/learning/specification.md),
+[delivery plan](docs/learning/delivery.md), and
+[validation report](docs/learning/validation-report.md) document scope and verification.

@@ -1,0 +1,304 @@
+Author dry-run evidence — 2026-09-28
+Temporary paths replaced with $AUDIT_ROOT; outputs otherwise retain the relevant tool text.
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/pytest -q
+Exit: 0
+........................................................................ [ 66%]
+.....................................                                    [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /private$AUDIT_ROOT/b22b89f/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+109 passed, 1 warning in 10.16s
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/ruff check .
+Exit: 0
+All checks passed!
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command add 2 3
+Exit: 0
+5
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command subtract 20 5 3
+Exit: 0
+12
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command divide 100 2 5
+Exit: 0
+10
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command stddev 2 4 6 ddof=1
+Exit: 0
+2
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command square 4
+Exit: 0
+16
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command square 4 5
+Exit: 1
+Error: Usage: square NUMBER
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command history
+Exit: 0
+ID       | Timestamp (UTC)     | Calculation         | Result
+---------+---------------------+---------------------+-------
+80362add | 2026-09-28 20:17:59 | add 2 3             | 5
+3cb32d88 | 2026-09-28 20:17:59 | subtract 20 5 3     | 12
+487dd39c | 2026-09-28 20:17:59 | divide 100 2 5      | 10
+94fb875e | 2026-09-28 20:17:59 | stddev 2 4 6 ddof=1 | 2
+5c4c7789 | 2026-09-28 20:18:00 | square 4            | 16
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube 3
+Exit: 0
+27
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube -2
+Exit: 0
+-8
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube
+Exit: 1
+Error: Usage: cube NUMBER (finite)
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube 2 3
+Exit: 1
+Error: Usage: cube NUMBER (finite)
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube 2 x=1
+Exit: 1
+Error: Usage: cube NUMBER (finite)
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube inf
+Exit: 1
+Error: Operand 1 must be a finite number; received 'inf'. Example: add 2 3. Use help OPERATION for usage.
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command cube 1e308
+Exit: 1
+Error: (34, 'Result too large')
+
+
+Command: $AUDIT_ROOT/b22b89f/.venv/bin/calc --history $AUDIT_ROOT/b22b89f/lab-history.csv --command operations
+Exit: 0
+Operation | Description                             | Usage
+----------+-----------------------------------------+-----------------------------
+add       | Add two or more numbers                 | add NUMBER NUMBER ...
+cube      | Cube one finite number                  | cube NUMBER
+divide    | Divide left to right                    | divide NUMBER NUMBER ...
+mean      | Arithmetic mean                         | mean NUMBER ...
+median    | Middle value                            | median NUMBER ...
+multiply  | Multiply two or more numbers            | multiply NUMBER NUMBER ...
+stddev    | Population or sample standard deviation | stddev NUMBER ... [ddof=0|1]
+subtract  | Subtract left to right                  | subtract NUMBER NUMBER ...
+
+
+Command: $AUDIT_ROOT/4ba5178/.venv/bin/pytest -q
+Exit: 0
+........................................................................ [ 84%]
+.............                                                            [100%]
+85 passed in 10.06s
+
+
+Command: $AUDIT_ROOT/4ba5178/.venv/bin/pytest $AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py -q
+Exit: 1
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+________________________ test_contextual_help_has_usage ________________________
+
+    def test_contextual_help_has_usage():
+        context = SimpleNamespace(registry=Registry.discover(lambda _: None, entries=[]))
+>       assert 'ddof=0|1' in parse('help stddev').execute(context)
+                             ^^^^^^^^^^^^^^^^^^^^
+
+$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'help stddev'
+
+    def parse(text: str) -> Command | None:
+        tokens = shlex.split(text)
+        if not tokens:
+            return None
+        name, *values = tokens
+        if name in {'help', 'operations', 'exit', 'quit'}:
+            if values:
+>               raise ValueError(f'{name} takes no arguments')
+E               ValueError: help takes no arguments
+
+src/calculator/commands.py:103: ValueError
+___________________________ test_operand_diagnostic ____________________________
+
+    def test_operand_diagnostic():
+>       with pytest.raises(ValueError, match='Operand 2'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Operand 2'
+E         Actual message: "could not convert string to float: 'three'"
+
+$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py:11: AssertionError
+____________________________ test_option_diagnostic ____________________________
+
+    def test_option_diagnostic():
+>       with pytest.raises(ValueError, match="Option 'ddof'"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: "Option 'ddof'"
+E         Actual message: "could not convert string to float: 'true'"
+
+$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../../../../..$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py::test_contextual_help_has_usage
+FAILED ../../../../../../../..$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py::test_operand_diagnostic
+FAILED ../../../../../../../..$AUDIT_ROOT/4ba5178/tests/unit/test_course_regression.py::test_option_diagnostic
+3 failed in 0.01s
+
+
+Command: $AUDIT_ROOT/4ba5178/.venv/bin/pytest -q
+Exit: 0
+........................................................................ [ 81%]
+................                                                         [100%]
+88 passed in 4.28s
+
+
+Command: $AUDIT_ROOT/4ba5178/.venv/bin/calc --history $AUDIT_ROOT/4ba5178/lab-history.csv --command help stddev
+Exit: 0
+stddev: Population or sample standard deviation
+Usage: stddev NUMBER ... [ddof=0|1]
+
+
+Cycle A after:
+5
+9
+Goodbye.
+
+Error: Operand 2 must be a finite number; received 'three'. Example: add 2 3. Use help OPERATION for usage.
+Error: Operand 2 must be a finite number; received 'nope'. Example: add 2 3. Use help OPERATION for usage.
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/pytest -q
+Exit: 0
+........................................................................ [ 78%]
+....................                                                     [100%]
+92 passed in 9.48s
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/pytest $AUDIT_ROOT/6ae07a1/tests/unit/test_course_ans.py -q
+Exit: 1
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________________________ test_ans_cycle ________________________________
+
+    def test_ans_cycle():
+        calc=Calculator(Registry.discover(lambda _: None,entries=[]),History((),Observer()))
+>       with pytest.raises(ValueError,match='No previous result'): parse('multiply ans 2').execute(calc)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'No previous result'
+E         Actual message: "Operand 1 must be a finite number; received 'ans'. Example: add 2 3. Use help OPERATION for usage."
+
+$AUDIT_ROOT/6ae07a1/tests/unit/test_course_ans.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../../../../..$AUDIT_ROOT/6ae07a1/tests/unit/test_course_ans.py::test_ans_cycle
+1 failed in 0.01s
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/pytest -q
+Exit: 0
+........................................................................ [ 78%]
+....................                                                     [100%]
+92 passed in 4.26s
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/calc --history $AUDIT_ROOT/6ae07a1/lab-history.csv --command add 2 3
+Exit: 0
+5
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/calc --history $AUDIT_ROOT/6ae07a1/lab-history.csv --command multiply ans 2
+Exit: 0
+10
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/calc --history $AUDIT_ROOT/6ae07a1/lab-history.csv --command add ans 1
+Exit: 0
+11
+
+
+Command: $AUDIT_ROOT/6ae07a1/.venv/bin/calc --history $AUDIT_ROOT/6ae07a1/lab-history.csv --command history clear
+Exit: 1
+Error: This deletes 3 records. Use history clear --yes to confirm.
+
+
+Before repeated-use workflows:
+[
+  {
+    "revision": "4ba5178",
+    "sequence": "add 2 three\nadd 2 3\nadd 4 nope\nadd 4 5\nexit\n",
+    "stdout": "5\n9\nGoodbye.\n",
+    "stderr": "Error: could not convert string to float: 'three'\nError: could not convert string to float: 'nope'\n"
+  },
+  {
+    "revision": "6ae07a1",
+    "sequence": "multiply ans 2\nadd 2 3\nmultiply ans 2\nadd ans 1\nhistory\nexit\n",
+    "stdout": "5\nID       | Timestamp (UTC)     | Calculation | Result\n---------+---------------------+-------------+-------\nbb335ff9 | 2026-09-28 20:20:50 | add 2 3     | 5\nGoodbye.\n",
+    "stderr": "Error: Operand 1 must be a finite number; received 'ans'. Example: add 2 3. Use help OPERATION for usage.\nError: Operand 1 must be a finite number; received 'ans'. Example: add 2 3. Use help OPERATION for usage.\nError: Operand 1 must be a finite number; received 'ans'. Example: add 2 3. Use help OPERATION for usage.\n"
+  }
+]
+Cycle B after:
+{
+  "stdout": "5\n10\n11\nID       | Timestamp (UTC)     | Calculation  | Result\n---------+---------------------+--------------+-------\n75fef553 | 2026-09-28 20:21:09 | add 2 3      | 5\na196da9a | 2026-09-28 20:21:09 | multiply 5 2 | 10\n1960b675 | 2026-09-28 20:21:09 | add 10 1     | 11\nGoodbye.\n",
+  "stderr": "Error: No previous result; calculate something first\n",
+  "exit": 0
+}
+HTTP walkthrough:
+[
+  {
+    "endpoint": "/api/operations",
+    "command": null,
+    "status": "200",
+    "body": "{\"operations\":[{\"name\":\"add\",\"description\":\"Add two or more numbers\",\"usage\":\"add NUMBER NUMBER ...\"},{\"name\":\"divide\",\"description\":\"Divide left to right\",\"usage\":\"divide NUMBER NUMBER ...\"},{\"name\":\"mean\",\"description\":\"Arithmetic mean\",\"usage\":\"mean NUMBER ...\"},{\"name\":\"median\",\"description\":\"Middle value\",\"usage\":\"median NUMBER ...\"},{\"name\":\"multiply\",\"description\":\"Multiply two or more numbers\",\"usage\":\"multiply NUMBER NUMBER ...\"},{\"name\":\"stddev\",\"description\":\"Population or sample standard deviation\",\"usage\":\"stddev NUMBER ... [ddof=0|1]\"},{\"name\":\"subtract\",\"description\":\"Subtract left to right\",\"usage\":\"subtract NUMBER NUMBER ...\"}],\"warnings\":[]}"
+  },
+  {
+    "endpoint": "/api/calculations",
+    "command": "add 2 3",
+    "status": "201",
+    "body": "{\"id\":\"df00c826-4020-4741-88e1-ed03b063b182\",\"timestamp\":\"2026-09-28T20:20:17.131477+00:00\",\"operation\":\"add\",\"args\":[2.0,3.0],\"options\":[],\"result\":5.0}"
+  },
+  {
+    "endpoint": "/api/calculations",
+    "command": "divide 1 0",
+    "status": "400",
+    "body": "{\"detail\":\"Cannot divide by zero\"}"
+  },
+  {
+    "endpoint": "/api/history",
+    "command": null,
+    "status": "200",
+    "body": "{\"records\":[{\"id\":\"df00c826-4020-4741-88e1-ed03b063b182\",\"timestamp\":\"2026-09-28T20:20:17.131477+00:00\",\"operation\":\"add\",\"args\":[2.0,3.0],\"options\":[],\"result\":5.0}]}"
+  },
+  {
+    "endpoint": "/api/history.csv",
+    "command": null,
+    "status": "200",
+    "body": "id,timestamp,operation,args,kwargs,result\ndf00c826-4020-4741-88e1-ed03b063b182,2026-09-28T20:20:17.131477+00:00,add,\"[2.0, 3.0]\",{},5.0\n"
+  },
+  {
+    "restart": "one record with result 5 retained"
+  }
+]

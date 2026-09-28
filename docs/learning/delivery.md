@@ -1,7 +1,7 @@
 # Teaching-package delivery plan
 
-The [specification](specification.md) is the source of truth. These issues author the
-teaching materials; they do not imply those materials are already complete.
+The [specification](specification.md) is the source of truth. These issues track the
+authored teaching materials. The validation report records evidence and remaining limits.
 
 Planning and review: [#10](https://github.com/kaw393939/python-calculator/issues/10).
 
@@ -32,4 +32,5 @@ Each issue owns one primary file. Keep commits focused and reference the actual 
 Review acceptance criteria before closure. If a task exposes a new software defect or needs a
 runnable fixture, create a separate scoped issue rather than quietly broadening the document task.
 
-All teaching delivery issues remain open until their artifacts and verification are complete.
+Delivery artifacts are authored. Issue acceptance evidence is summarized in
+[validation-report.md](validation-report.md); learner effectiveness still needs a real pilot.
