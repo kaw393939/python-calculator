@@ -1,0 +1,144 @@
+[
+  {
+    "file": "home-guide.png",
+    "prompt": "Use case: illustration-story. Create a polished editorial illustration for a welcoming adult software engineering textbook. A recurring fictional guide named Mira: a friendly young adult woman with warm brown skin, short curly dark hair, round gold glasses, expressive brown eyes, and a teal jacket over a cream shirt, a small gold star pin. Clear recognizable face, warm confident smile. Waist-up portrait, gesturing welcomingly with an open hand while holding a small glowing notebook. Blend a modern engineering mentor with the magician archetype through subtle gold geometric sparks, not wizard costume. Rich teal, warm ivory, muted gold, ink blue. Hand-painted editorial digital illustration, sophisticated and charming, not childish, no photorealism, no text, no logos. Square composition, ivory background. Intended as the character introduction image on the home page and visual reference for the whole book."
+  },
+  {
+    "file": "home-scene.png",
+    "page": "home",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira opens a glowing doorway between a sketch of a small calculator and a real web interface; full-body figure with recognizable face in an imaginative engineering studio."
+  },
+  {
+    "file": "start-guide.png",
+    "page": "start",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Prepare your workspace'. Mira holds a small object related to this scene and gestures thoughtfully: Mira arranges a laptop, a notebook and labeled-looking blank project folders on a clean workbench; beginning a calm learning journey. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "start-scene.png",
+    "page": "start",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira arranges a laptop, a notebook and labeled-looking blank project folders on a clean workbench; beginning a calm learning journey."
+  },
+  {
+    "file": "requirements-guide.png",
+    "page": "requirements",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Name the transformation'. Mira holds a small object related to this scene and gestures thoughtfully: Mira transforms a swirling cloud of loose blank idea cards into a neat architectural blueprint on her desk. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "requirements-scene.png",
+    "page": "requirements",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira transforms a swirling cloud of loose blank idea cards into a neat architectural blueprint on her desk."
+  },
+  {
+    "file": "cli-guide.png",
+    "page": "cli",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Build the engine'. Mira holds a small object related to this scene and gestures thoughtfully: Mira assembles elegant modular brass and teal blocks linked by glowing threads around a terminal-shaped panel; metaphoric software architecture. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "cli-scene.png",
+    "page": "cli",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira assembles elegant modular brass and teal blocks linked by glowing threads around a terminal-shaped panel; metaphoric software architecture."
+  },
+  {
+    "file": "testing-guide.png",
+    "page": "testing",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Make confidence visible'. Mira holds a small object related to this scene and gestures thoughtfully: Mira examines a small glowing mechanism through a magnifying glass, with a row of test lights, one amber and several green. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "testing-scene.png",
+    "page": "testing",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira examines a small glowing mechanism through a magnifying glass, with a row of test lights, one amber and several green."
+  },
+  {
+    "file": "dogfooding-guide.png",
+    "page": "dogfooding",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Try it. Notice. Improve.'. Mira holds a small object related to this scene and gestures thoughtfully: Mira uses a laptop at a workbench, follows a circular trail of observation notes, a repaired gear and a second improved prototype. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "dogfooding-scene.png",
+    "page": "dogfooding",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira uses a laptop at a workbench, follows a circular trail of observation notes, a repaired gear and a second improved prototype."
+  },
+  {
+    "file": "web-guide.png",
+    "page": "web",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Open another doorway'. Mira holds a small object related to this scene and gestures thoughtfully: Mira connects one central glowing calculation engine to two screens, a terminal and a friendly web dashboard. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "web-scene.png",
+    "page": "web",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira connects one central glowing calculation engine to two screens, a terminal and a friendly web dashboard."
+  },
+  {
+    "file": "review-guide.png",
+    "page": "review",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Own the result'. Mira holds a small object related to this scene and gestures thoughtfully: Mira presents a completed engineering notebook next to a working prototype, with a clear questioning expression and careful confidence. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "review-scene.png",
+    "page": "review",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira presents a completed engineering notebook next to a working prototype, with a clear questioning expression and careful confidence."
+  },
+  {
+    "file": "glossary-guide.png",
+    "page": "glossary",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Find the right words'. Mira holds a small object related to this scene and gestures thoughtfully: Mira browses a beautiful library of small engineering books and floating geometric concept symbols. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "glossary-scene.png",
+    "page": "glossary",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira browses a beautiful library of small engineering books and floating geometric concept symbols."
+  },
+  {
+    "file": "case-study-guide.png",
+    "page": "case-study",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Follow the evidence'. Mira holds a small object related to this scene and gestures thoughtfully: Mira traces a connected trail of project artifacts on a large pinboard from rough sketch to terminal to website, using gold thread. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "case-study-scene.png",
+    "page": "case-study",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira traces a connected trail of project artifacts on a large pinboard from rough sketch to terminal to website, using gold thread."
+  },
+  {
+    "file": "assessment-guide.png",
+    "page": "assessment",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Show what you know'. Mira holds a small object related to this scene and gestures thoughtfully: Mira balances a simple brass scale with an engineering notebook and working prototype, illustrating evidence and understanding. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "assessment-scene.png",
+    "page": "assessment",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira balances a simple brass scale with an engineering notebook and working prototype, illustrating evidence and understanding."
+  },
+  {
+    "file": "instructor-guide.png",
+    "page": "instructor",
+    "kind": "guide",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Create a distinct waist-up guide portrait for 'Guide the next engineer'. Mira holds a small object related to this scene and gestures thoughtfully: Mira welcomes a small diverse group of adult learners around a shared engineering workbench, all faces warm and attentive. Square composition, face prominent, friendly direct eye contact."
+  },
+  {
+    "file": "instructor-scene.png",
+    "page": "instructor",
+    "kind": "scene",
+    "prompt": "Use case: illustration-story. Editorial illustration for an adult AI-forward engineering book called The Engineer's Field Guide. Reference image defines recurring fictional mentor Mira: preserve brown skin, short curly dark hair, round gold glasses, teal jacket, ivory shirt and gold star pin. Recognizable friendly face. Polished hand-painted digital illustration, warm ivory textured backdrop, deep teal and muted gold, subtle geometric sparks evoking transformation through understanding, not supernatural promises. No text, no logos, no watermark. Landscape composition with generous breathing room. Mira welcomes a small diverse group of adult learners around a shared engineering workbench, all faces warm and attentive."
+  }
+]
