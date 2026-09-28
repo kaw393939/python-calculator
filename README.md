@@ -1,6 +1,6 @@
 # Python Calculator
 
-An extensible terminal calculator with a friendly REPL, statistical operations,
+An extensible web and terminal calculator with a friendly REPL, statistical operations,
 and automatically saved CSV history. Built to demonstrate SOLID, Command,
 Strategy, Facade, and Observer through a small, usable application.
 
@@ -28,8 +28,20 @@ Use `calc --history ./experiment.csv` to choose a history file, or
 `calc --command 'multiply 6 7'` for a single calculation. The default is
 `~/.python-calculator/history.csv`. Type `help` or `operations` for guidance.
 
+## Web workspace
+
+```sh
+calc-web
+```
+
+Open [Calculator Studio](http://127.0.0.1:8000) for guided calculations, statistics,
+plugins, command input, searchable history, result reuse, and CSV export.
+[Web setup, API and architecture](docs/web.md) explains configuration and testing.
+The web app uses its own CSV by default; run one process per history file.
+
 ## Features
 
+- FastAPI backend and responsive vanilla JavaScript frontend.
 - Four arithmetic operations with multiple operands; mean, median, and standard deviation.
 - Positional arguments and numeric `key=value` options, without evaluating Python code.
 - Discoverable plugins; install the included square example to try extension.

@@ -26,3 +26,8 @@ Create a disposable CSV; try help and operations; calculate multi-operand arithm
 and both standard deviation modes; trigger bad syntax and zero division; inspect and
 delete a record by prefix; restart; clear explicitly; install the example plugin and
 verify discovery. Record observations and any specification amendments in review.md.
+
+Web acceptance scenarios UAT-15–18 and their automated API test mapping are in
+[the web guide](web.md#acceptance-and-verification). UX iteration tests also cover
+contextual help, typo suggestions, case-insensitive names, command completion, ans,
+and default/recent/all/detail history views.

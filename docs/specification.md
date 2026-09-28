@@ -85,3 +85,16 @@ loaded history. It errors when history is empty. Deleted results are not reused.
 `history` shows the latest 20 records; `history last N` requires a positive integer;
 `history all` lists everything; `history show ID` displays full precision and identity.
 `history clear` explains the record count and required confirmation flag.
+
+## Web extension requirements (FR-11–FR-15)
+
+- **FR-11:** FastAPI exposes the same registered operations and calculation command path.
+- **FR-12:** A responsive JavaScript UI offers guided and command input, numeric options,
+  readable population/sample selection, ans reuse, results and validation messages.
+- **FR-13:** Searchable history supports reuse, full details, deletion, clear confirmation,
+  and CSV export. Successful mutations automatically persist before reporting success.
+- **FR-14:** A single web server serializes access to its history. Web and CLI default to
+  different CSV paths to avoid accidental simultaneous writers.
+- **FR-15:** Document setup, API routes, plugin discovery, failure behavior and limitations.
+
+The complete interface, API contract and UAT-15–18 are specified in [web.md](web.md).

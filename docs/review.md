@@ -75,3 +75,22 @@ A second real CLI run verified add 2 3 → 5, multiply ans 2 → 10, history las
 and rejection of unconfirmed clear with the actual record count. Terminal wrapping,
 undo, and expression syntax remain optional future work. Current CLI is suitable for
 ordinary multi-operand calculations; a web frontend is the next requested interface.
+
+## Web workspace review
+
+Added FastAPI with injected registry/repository and serialized mutations. API tests
+cover built-in and plugin execution, ans, invalid input, plugin exceptions, corrupt
+request bodies, save failures, concurrent calculations, CSV export, restart, deletion,
+and explicit clearing. The full suite passes 109 tests at 98.31% statement coverage;
+Ruff and JavaScript syntax checks pass.
+
+Exercised the running application in the browser: guided add 2 3 4 produced 9;
+population deviation for the example dataset produced 2; command multiply ans 3
+produced 6; divide 1 0 showed a clear error and retained three records. Inspected
+full details, searched for stddev, opened and cancelled clear confirmation, and
+reloaded to verify persistence. Checked desktop two-column and narrow stacked layouts.
+No browser console errors were reported. Screenshot: web-preview.png.
+
+The CLI and web workflows are ready for ordinary personal use. Future improvements
+with real value include undo for deletion, history pagination for large datasets,
+and optional exact decimal arithmetic. They are not prerequisites for this release.

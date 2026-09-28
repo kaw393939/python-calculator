@@ -56,3 +56,12 @@ optional alternative repositories; concurrent writers with locking or a database
 | History and persistence | [#4](https://github.com/kaw393939/python-calculator/issues/4) |
 | Commands and CLI | [#5](https://github.com/kaw393939/python-calculator/issues/5) |
 | Release review and usability | [#6](https://github.com/kaw393939/python-calculator/issues/6) |
+
+## Follow-up increments
+
+- [#7](https://github.com/kaw393939/python-calculator/issues/7): E5/US-07 terminal editing,
+  per-operation help, case-insensitive commands, and actionable errors.
+- [#8](https://github.com/kaw393939/python-calculator/issues/8): E4/E5 result reuse and
+  recent/all/detail history navigation, developed after a second CLI trial.
+- [#9](https://github.com/kaw393939/python-calculator/issues/9): E7 web workspace,
+  US-09–11 and UAT-15–18, defined in [web.md](web.md).
