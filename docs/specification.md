@@ -31,7 +31,9 @@ to acceptance tests and issue-linked commits.
   snapshot. Save via pandas to a temporary file in the same directory, flush/fsync,
   then replace atomically. Publish in-memory state only after persistence succeeds.
   Save failure leaves existing history and memory unchanged and reports an error.
-- **FR-08:** `history` prints IDs, timestamps, expressions, and results in a table.
+- **FR-08:** `history` prints unique ID prefixes (at least eight characters), UTC timestamps
+  to the second, expressions, and results in a table. Full UUIDs and timestamp
+  precision remain in CSV.
   `history delete ID` accepts a full UUID or unique prefix; missing or ambiguous IDs
   fail. `history clear --yes` explicitly clears all records; omission does not clear.
 - **FR-09:** `help`, `operations`, `exit`, and `quit` are available. EOF exits cleanly;

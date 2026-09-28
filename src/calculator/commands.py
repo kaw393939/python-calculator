@@ -1,5 +1,6 @@
 """Parse terminal syntax into independently executable command objects."""
 from dataclasses import dataclass
+from datetime import datetime
 import re
 import shlex
 from typing import Protocol
@@ -64,10 +65,15 @@ class HistoryCommand:
         if not calculator.history:
             return 'No calculations yet.'
         rows = []
+        identifiers = [record.id for record in calculator.history]
+        prefix_length = 8
+        while len({identifier[:prefix_length] for identifier in identifiers}) < len(identifiers):
+            prefix_length += 1
         for record in calculator.history:
             expression = ' '.join([record.operation, *(number(v) for v in record.args),
                                    *(f'{k}={number(v)}' for k, v in record.options)])
-            rows.append([record.id, record.timestamp, expression, number(record.result)])
+            stamp = datetime.fromisoformat(record.timestamp).strftime('%Y-%m-%d %H:%M:%S')
+            rows.append([record.id[:prefix_length], stamp, expression, number(record.result)])
         return table(['ID', 'Timestamp (UTC)', 'Calculation', 'Result'], rows)
 
 
