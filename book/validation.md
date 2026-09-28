@@ -30,3 +30,16 @@ Issue #23 publishes the existing reviewed learning package as a static book.
 These checks do not establish universal browser compatibility, full accessibility
 conformance or classroom effectiveness. The prior Safari compatibility limitation and
 pending learner pilot remain explicit in the teaching materials.
+
+## Published evidence
+
+- Live book: https://kaw393939.github.io/python-calculator/
+- Pages deployment succeeded: https://github.com/kaw393939/python-calculator/actions/runs/36492803825
+- Calculator CI passed on Python 3.11, 3.12, 3.13 and 3.14:
+  https://github.com/kaw393939/python-calculator/actions/runs/36492803720
+- All 48 published HTML, image, CSS/JS, index and download resources returned HTTP 200.
+- Live browser verified the welcome page and `observer` search (four matching pages).
+- [Published welcome screenshot](live-preview.png).
+
+Publishing implementation is in commits `0e4a18c`, `d6d599a` and `f38f23f`, each linked
+to issue #23. The original `is218-oop-calculator` repository was not modified.
