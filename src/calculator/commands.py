@@ -13,12 +13,14 @@ HELP = '''Commands:
   mean|median NUMBER ...
   stddev NUMBER ... [ddof=0|1]       0=population, 1=sample
   operations                       List all installed calculations
-  history                          Show saved calculations
+  history [last N | all]           Show recent (default 20) or all records
+  history show ID                  Show full record details
   history delete ID                Delete a full ID or unique prefix
   history clear --yes               Delete all history
   help [OPERATION]                 Show guide or operation usage
   exit | quit                      Leave the calculator
 Examples: add 2 3 4; stddev 2 4 6 ddof=1
+Use ans as an operand to reuse the latest retained result.
 Use one command per line. All numbers and options must be finite.'''
 
 
@@ -43,19 +45,32 @@ class Command(Protocol):
 @dataclass(frozen=True)
 class CalculateCommand:
     name: str
-    args: tuple[float, ...]
+    args: tuple[float | str, ...]
     kwargs: dict[str, float]
 
     def execute(self, calculator: Calculator) -> str:
-        return number(calculator.calculate(self.name, *self.args, **self.kwargs).result)
+        if 'ans' in self.args and not calculator.history:
+            raise ValueError('No previous result; calculate something first')
+        args = tuple(calculator.history[-1].result if value == 'ans' else value
+                     for value in self.args)
+        return number(calculator.calculate(self.name, *args, **self.kwargs).result)
 
 
 @dataclass(frozen=True)
 class HistoryCommand:
     action: str = 'list'
     identifier: str = ''
+    limit: int | None = 20
 
     def execute(self, calculator: Calculator) -> str:
+        if self.action == 'confirm':
+            raise ValueError(f'This deletes {len(calculator.history)} records. '
+                             'Use history clear --yes to confirm.')
+        if self.action == 'show':
+            record = calculator.find(self.identifier)
+            return (f'ID: {record.id}\nTimestamp: {record.timestamp}\n'
+                    f'Operation: {record.operation}\nArguments: {record.args}\n'
+                    f'Options: {dict(record.options)}\nResult: {record.result}')
         if self.action == 'delete':
             calculator.delete(self.identifier)
             return 'Calculation deleted.'
@@ -69,12 +84,15 @@ class HistoryCommand:
         prefix_length = 8
         while len({identifier[:prefix_length] for identifier in identifiers}) < len(identifiers):
             prefix_length += 1
-        for record in calculator.history:
+        selected = calculator.history if self.limit is None else calculator.history[-self.limit:]
+        for record in selected:
             expression = ' '.join([record.operation, *(number(v) for v in record.args),
                                    *(f'{k}={number(v)}' for k, v in record.options)])
             stamp = datetime.fromisoformat(record.timestamp).strftime('%Y-%m-%d %H:%M:%S')
             rows.append([record.id[:prefix_length], stamp, expression, number(record.result)])
-        return table(['ID', 'Timestamp (UTC)', 'Calculation', 'Result'], rows)
+        return table(['ID', 'Timestamp (UTC)', 'Calculation', 'Result'], rows) + (
+            f'\nShowing {len(selected)} of {len(calculator.history)}. Use history all to see every record.'
+            if len(selected) < len(calculator.history) else '')
 
 
 @dataclass(frozen=True)
@@ -116,8 +134,16 @@ def parse(text: str) -> Command | None:
     if name == 'history':
         if not values:
             return HistoryCommand()
-        if len(values) == 2 and values[0] == 'delete':
-            return HistoryCommand('delete', values[1])
+        if len(values) == 2 and values[0] in {'delete', 'show'}:
+            return HistoryCommand(values[0], values[1])
+        if values == ['all']:
+            return HistoryCommand(limit=None)
+        if values == ['clear']:
+            return HistoryCommand('confirm')
+        if len(values) == 2 and values[0] == 'last':
+            if not values[1].isdigit() or int(values[1]) < 1:
+                raise ValueError('History limit must be a positive integer')
+            return HistoryCommand(limit=int(values[1]))
         if values == ['clear', '--yes']:
             return HistoryCommand('clear')
         raise ValueError('Usage: history | history delete ID | history clear --yes')
@@ -131,7 +157,7 @@ def parse(text: str) -> Command | None:
         else:
             if kwargs:
                 raise ValueError('Positional operands must come before named options')
-            args.append(numeric(token, f"Operand {len(args) + 1}"))
+            args.append('ans' if token.lower() == 'ans' else numeric(token, f"Operand {len(args) + 1}"))
     return CalculateCommand(name, tuple(args), kwargs)
 
 

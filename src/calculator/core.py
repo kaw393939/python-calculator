@@ -24,11 +24,15 @@ class Calculator:
         self._history.replace((*self.history, record))
         return record
 
-    def delete(self, identifier: str) -> None:
+    def find(self, identifier: str) -> Record:
         matches = [r for r in self.history if identifier and r.id.startswith(identifier)]
         if len(matches) != 1:
             raise ValueError('History ID is unknown or ambiguous; use a longer ID from history')
-        self._history.replace(tuple(r for r in self.history if r.id != matches[0].id))
+        return matches[0]
+
+    def delete(self, identifier: str) -> None:
+        record = self.find(identifier)
+        self._history.replace(tuple(r for r in self.history if r.id != record.id))
 
     def clear(self) -> None:
         self._history.replace(())

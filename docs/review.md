@@ -66,3 +66,12 @@ In a real PTY, Up recalled `multipy 2 3`; Ctrl-U cleared it; typing `mul` then T
 completed `multiply`, and `6 7` returned 42. Contextual help, capitalized commands,
 numeric errors, and typo suggestions behaved as expected. A further trial exposed
 missing result reuse and recent-history navigation, motivating issue #8.
+
+## UX iteration 2
+
+Regression tests reproduced missing result reuse and recent-history navigation.
+Implemented ans, recent/all/detail history commands, and explicit clear guidance.
+A second real CLI run verified add 2 3 → 5, multiply ans 2 → 10, history last 1,
+and rejection of unconfirmed clear with the actual record count. Terminal wrapping,
+undo, and expression syntax remain optional future work. Current CLI is suitable for
+ordinary multi-operand calculations; a web frontend is the next requested interface.

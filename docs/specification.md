@@ -77,3 +77,11 @@ numbers identify the operand or option. `--help` documents examples and default 
 Interactive terminals use optional standard-library readline for session-local command
 recall, editing, and completion of operation/command words. Without readline, basic
 input remains available. No extra command-history file is saved.
+
+## UX iteration 2 amendment
+
+`ans` is a positional operand referencing the latest retained history result, including
+loaded history. It errors when history is empty. Deleted results are not reused.
+`history` shows the latest 20 records; `history last N` requires a positive integer;
+`history all` lists everything; `history show ID` displays full precision and identity.
+`history clear` explains the record count and required confirmation flag.

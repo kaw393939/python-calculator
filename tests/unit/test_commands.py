@@ -3,7 +3,7 @@ import pytest
 from calculator.commands import CalculateCommand, ExitCommand, HistoryCommand, parse
 
 
-@pytest.mark.parametrize('text', ['help x y', 'quit x', 'history clear', 'history delete',
+@pytest.mark.parametrize('text', ['help x y', 'quit x', 'history delete',
     'add 1 no', 'stddev 1 ddof=0 ddof=1', 'stddev 1 ddof=0 2',
     'stddev 1 Bad=0', 'add 1 inf', 'add "', 'mean 1 x='])
 def test_uat_03_12_invalid_syntax(text):
