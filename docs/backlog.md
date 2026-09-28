@@ -65,3 +65,9 @@ optional alternative repositories; concurrent writers with locking or a database
   recent/all/detail history navigation, developed after a second CLI trial.
 - [#9](https://github.com/kaw393939/python-calculator/issues/9): E7 web workspace,
   US-09–11 and UAT-15–18, defined in [web.md](web.md).
+
+## Teaching-module follow-up
+
+The AI-forward software engineering curriculum has its own
+[specification](learning/specification.md) and [delivery issues](learning/delivery.md).
+Its learning requirements and acceptance tests are separate from application features.

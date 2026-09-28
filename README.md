@@ -72,3 +72,11 @@ Work is tracked in GitHub issues. Each focused commit references its issue;
 completed issue scope is closed by a `Closes #N` commit on the default branch.
 See the backlog for the definition of done. This is a finite floating-point,
 single-user calculator, not a symbolic algebra or exact financial arithmetic system.
+
+## AI-forward engineering lesson plan
+
+The [teaching-module specification](docs/learning/specification.md) defines a six-session
+lesson sequence using this project's CLI, tests, dogfooding, and web interface.
+The [atomic delivery backlog](docs/learning/delivery.md) tracks the planned glossary,
+labs, case study, instructor guide, assessment, and final walkthrough. These teaching
+materials are planned work; the specification and issue plan are ready now.
