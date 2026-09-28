@@ -189,3 +189,12 @@ separated planned files from existing resources; defined accessible historical s
 states rather than assuming old bugs remain; made Safari failure an explicit evidence
 lesson; retained separate-repository protection; added measurable assessment and final
 walkthrough criteria. No lesson execution or learner pilot is claimed in this review.
+
+## Illustrated publishing extension
+
+The GitHub Pages edition is now in scope as a follow-on release tracked by issue #23.
+Its [publishing specification](../../book/README.md) defines the twelve-page learning
+book, recurring guide, two original illustrations per page, callouts, navigation,
+public workshop downloads and automated publishing. The Markdown module remains
+the curricular source of truth. The public site is a static reading experience;
+it does not host the calculator service, student accounts or assessment submissions.

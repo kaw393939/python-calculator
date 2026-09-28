@@ -54,11 +54,12 @@ If Git asks for identity, configure your chosen author identity for this learner
 do not paste someone else's credentials. Keep this lesson folder open in the source
 checkout because historical snapshots predate the course docs.
 
-**Route B — no private repository access:** obtain the instructor-provided `b22b89f.tar`
-and this learning folder. Make a new directory with `mktemp -d`, extract the archive there
+**Route B — no private repository access:** download `b22b89f.tar` and the lesson pack from the
+[public workshop page](https://kaw393939.github.io/python-calculator/start.html),
+or obtain them from your instructor. Extract the lesson pack to keep the learning folder open. Make a new directory with `mktemp -d`, extract the archive there
 using `tar -x -f /path/to/b22b89f.tar -C "$LEARNER_COPY"` (replace the archive path with its
 actual location), then start at `cd "$LEARNER_COPY"` in the commands above. For later
-historical exercises request `4ba5178.tar`, `6ae07a1.tar` and `56444fc.tar`. Never pretend an
+historical exercises, the same page provides `4ba5178.tar`, `6ae07a1.tar` and `56444fc.tar`. Never pretend an
 unavailable private link has been read. Dependencies still require package access or an
 instructor-prepared wheelhouse; offline materials alone do not install packages.
 

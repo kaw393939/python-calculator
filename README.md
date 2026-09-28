@@ -84,3 +84,14 @@ engineering defense. Includes a [glossary](docs/learning/glossary.md),
 The [specification](docs/learning/specification.md),
 [delivery plan](docs/learning/delivery.md), and
 [validation report](docs/learning/validation-report.md) document scope and verification.
+
+### Read the illustrated book
+
+**[The Engineer’s Field Guide →](https://kaw393939.github.io/python-calculator/)**
+
+Meet Mira and follow twelve illustrated pages from requirements to a tested CLI,
+dogfooding, and a FastAPI web interface. Includes chapter search, reading progress,
+practical tips and downloadable workshop code. No sign-up is required.
+
+[Book publishing specification and development guide](book/README.md) explains the
+static build, image prompts, public downloads and GitHub Actions deployment.
