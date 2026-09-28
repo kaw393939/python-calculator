@@ -130,3 +130,11 @@ def test_csv_json_options(tmp_path):
     make(path).calculate('stddev', 2, 4, 6, ddof=1)
     row = pd.read_csv(path).iloc[0]
     assert json.loads(row['kwargs']) == {'ddof': 1}
+
+
+def test_invalid_api_option_name_cannot_corrupt_history(tmp_path):
+    path = tmp_path / 'history.csv'
+    calc = make(path)
+    with pytest.raises(ValueError, match='Option names'):
+        calc.calculate('stddev', 1, 2, **{'bad key': 0})
+    assert not path.exists()

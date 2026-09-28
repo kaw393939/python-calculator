@@ -1,4 +1,6 @@
 """Application facade, independent of terminal and pandas."""
+import re
+
 from calculator.history import History, Record
 from calculator.operations import Registry, finite
 
@@ -13,6 +15,8 @@ class Calculator:
         return self._history.records
 
     def calculate(self, name: str, *args: float, **kwargs: float) -> Record:
+        if not all(re.fullmatch(r'[a-z][a-z0-9_]*', key) for key in kwargs):
+            raise ValueError('Option names must be lowercase identifiers')
         args = tuple(finite(value) for value in args)
         kwargs = {key: finite(value) for key, value in kwargs.items()}
         result = finite(self.registry.get(name).execute(*args, **kwargs))
