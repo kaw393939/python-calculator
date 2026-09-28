@@ -8,6 +8,7 @@ from calculator.core import Calculator
 from calculator.history import History, PersistenceObserver
 from calculator.operations import Registry
 from calculator.storage import CsvRepository
+from calculator.terminal import configure_editing
 
 
 def run(calculator: Calculator, text: str) -> bool:
@@ -18,8 +19,10 @@ def run(calculator: Calculator, text: str) -> bool:
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description='Extensible calculator with automatic CSV history')
-    parser.add_argument('--history', type=Path, default=Path.home() / '.python-calculator/history.csv')
+    parser = argparse.ArgumentParser(description='Extensible calculator with automatic CSV history',
+        epilog="Examples: calc; calc --command 'add 2 3'; calc --history ./work.csv")
+    parser.add_argument('--history', type=Path, default=Path.home() / '.python-calculator/history.csv',
+                        help='CSV path (default: ~/.python-calculator/history.csv)')
     parser.add_argument('--command', help='Run one command and exit')
     options = parser.parse_args(argv)
     try:
@@ -31,6 +34,7 @@ def main(argv=None) -> int:
             return 0
         interactive = sys.stdin.isatty()
         if interactive:
+            configure_editing(registry)
             print(f'Calculator — type help for commands. History: {repository.path}')
         while True:
             try:

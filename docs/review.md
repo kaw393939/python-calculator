@@ -58,3 +58,11 @@ requirements against implemented behavior, and UAT references against test names
 The release supports seven built-ins plus independently installed plugins. “Extensible”
 does not mean every mathematical operation is already included. Single-writer and
 finite floating-point limitations remain explicit in the specification and README.
+
+## UX iteration 1
+
+Added failing tests before implementation, then verified 92 passing tests and lint.
+In a real PTY, Up recalled `multipy 2 3`; Ctrl-U cleared it; typing `mul` then Tab
+completed `multiply`, and `6 7` returned 42. Contextual help, capitalized commands,
+numeric errors, and typo suggestions behaved as expected. A further trial exposed
+missing result reuse and recent-history navigation, motivating issue #8.

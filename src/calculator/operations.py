@@ -2,6 +2,7 @@
 import re
 import statistics
 from collections.abc import Callable
+from difflib import get_close_matches
 from importlib.metadata import entry_points
 from math import isfinite, prod
 from numbers import Real
@@ -102,7 +103,9 @@ class Registry:
         try:
             return self._operations[name]
         except KeyError:
-            raise ValueError(f"Unknown operation '{name}'; type operations to list choices") from None
+            matches = get_close_matches(name, self._operations, n=1)
+            hint = f" Did you mean '{matches[0]}'?" if matches else ''
+            raise ValueError(f"Unknown operation '{name}'; type operations to list choices.{hint}") from None
 
     def all(self) -> tuple[Operation, ...]:
         return tuple(self._operations[name] for name in sorted(self._operations))

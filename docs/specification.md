@@ -68,3 +68,12 @@ help | operations | history | history delete ID | history clear --yes | exit | q
 `shlex` tokenization supports shell-style quoting. Numeric options remain floats;
 plugins interpret allowed values. History clear uses a flag instead of a secondary
 prompt so scripts and interactive use share one predictable command contract.
+
+## UX iteration 1 amendment
+
+Commands are case-insensitive. `help OPERATION` reads description and usage from the
+registry, including installed plugins. Unknown names suggest a close match; malformed
+numbers identify the operand or option. `--help` documents examples and default storage.
+Interactive terminals use optional standard-library readline for session-local command
+recall, editing, and completion of operation/command words. Without readline, basic
+input remains available. No extra command-history file is saved.
