@@ -43,8 +43,10 @@ def test_uat_06_07_discovery():
     warnings = []
     def entry(name, factory):
         return SimpleNamespace(name=name, value=name, load=lambda: factory)
-    good = lambda: Builtin('square', 'Square', lambda x: x*x, 1)
-    broken = lambda: 1/0
+    def good():
+        return Builtin('square', 'Square', lambda x: x*x, 1)
+    def broken():
+        return 1/0
     registry = Registry.discover(warnings.append, [entry('square', good),
         entry('broken', broken), entry('add', lambda: Builtin('add', 'Collision', sum))])
     assert registry.get('square').execute(4) == 16
