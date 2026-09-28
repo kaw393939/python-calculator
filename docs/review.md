@@ -21,4 +21,40 @@ one contract. Resolved these findings before implementation:
 
 ## Implementation and CLI review
 
-Pending implementation, automated tests, and hands-on CLI exercise.
+The first real PTY session exercised help, operations, addition, both deviation
+modes, negative operands, zero-division recovery, history, deletion by prefix, and
+rejection of an unconfirmed clear. It exposed overly wide history output.
+
+Changed displayed IDs to unique prefixes of at least eight characters and timestamps
+to UTC seconds. Full values stay in CSV. Prefixes expand automatically on collisions;
+FR-08 and acceptance tests now specify that behavior. This makes everyday history
+readable without sacrificing stable identity or persistence precision.
+
+Code review also found that Python API callers could pass invalid option names even
+though the CLI rejected them. Added facade validation to prevent writing a record
+that the strict CSV reader would later reject.
+
+The initial coverage run missed subprocess execution; enabled coverage's subprocess
+patch rather than weakening the threshold. Unit, integration, and real subprocess
+tests now contribute to the same report.
+
+## Release verification (2026-09-28)
+
+- 85 positive/negative tests passed across unit, integration, and subprocess E2E.
+- Combined statement coverage: 100%; enforced CI minimum: 90%.
+- Ruff lint passed.
+- Installed the separate example package, discovered `square` in operations, and
+  calculated `square 4` = 16. Uninstalled it and verified its historical record
+  still loaded and displayed. Explicit clear persisted an empty CSV.
+- Reopened the CLI against the same temporary CSV and verified compact history,
+  deletion persistence, and both standard deviation modes.
+- Original sibling `calculator` checkout remains clean on its original remote;
+  this project lives separately in `python-calculator`.
+
+## Final documentation review
+
+Checked all relative Markdown links, CLI examples, plugin installation commands,
+requirements against implemented behavior, and UAT references against test names.
+The release supports seven built-ins plus independently installed plugins. “Extensible”
+does not mean every mathematical operation is already included. Single-writer and
+finite floating-point limitations remain explicit in the specification and README.

@@ -45,3 +45,14 @@ issue; acceptance evidence is recorded; CI is green before final delivery.
 
 Exact decimal arithmetic; units and conversions; filtering/large history pagination;
 optional alternative repositories; concurrent writers with locking or a database.
+
+## GitHub delivery issues
+
+| Stage | Issue |
+| --- | --- |
+| Reviewed documentation | [#1](https://github.com/kaw393939/python-calculator/issues/1) |
+| Project foundation | [#2](https://github.com/kaw393939/python-calculator/issues/2) |
+| Operations and plugins | [#3](https://github.com/kaw393939/python-calculator/issues/3) |
+| History and persistence | [#4](https://github.com/kaw393939/python-calculator/issues/4) |
+| Commands and CLI | [#5](https://github.com/kaw393939/python-calculator/issues/5) |
+| Release review and usability | [#6](https://github.com/kaw393939/python-calculator/issues/6) |
